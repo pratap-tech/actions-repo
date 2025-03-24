@@ -28,3 +28,12 @@ jobs:
                 port: 22
                 source: "*"
                 target: C:\inetpub\wwwroot\ampratap.local\
+            
+            - name: Restart IIS
+              uses: appleboy/ssh-action@master
+              with:
+                host: ${{ vars.IIS_HOST_DATA }}
+                username: ${{ vars.IIS_USERNAME_DATA }}
+                password: ${{ secrets.IIS_PASSWORD_DATA }}
+                script: |
+                  %windir%\system32\inetsrv\appcmd.exe recycle apppool /apppool.name:"ampratap.local"
