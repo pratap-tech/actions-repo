@@ -26,5 +26,6 @@ jobs:
                 host: ${{ vars.IIS_HOST_DATA }}
                 username: ${{ vars.IIS_USERNAME_DATA }}
                 password: ${{ secrets.IIS_PASSWORD_DATA }}
+                port: 22
                 source: "build/*"
                 target: C:\inetpub\wwwroot\
