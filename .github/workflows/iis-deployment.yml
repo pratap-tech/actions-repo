@@ -27,4 +27,4 @@ jobs:
                 password: ${{ secrets.IIS_PASSWORD_DATA }}
                 port: 22
                 source: "*"
-                target: C:\inetpub\wwwroot\
+                target: C:\inetpub\wwwroot\ampratap.local\
