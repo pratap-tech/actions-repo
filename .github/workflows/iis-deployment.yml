@@ -19,15 +19,7 @@ jobs:
             - name: cat the index file
               run: cat index.html
             
-            - name: Copy To Server
-              uses: appleboy/scp-action@master
-              with:
-                host: ${{ vars.IIS_HOST_DATA }}
-                username: ${{ vars.IIS_USERNAME_DATA }}
-                password: ${{ secrets.IIS_PASSWORD_DATA }}
-                port: 22
-                source: "*"
-                target: C:\inetpub\wwwroot\ampratap.local\
+         
             
             - name: Restart IIS
               uses: appleboy/ssh-action@master
