@@ -11,8 +11,7 @@ jobs:
             
             - name: Create Directory and Add Files
               run: |
-                mkdir -p build
-                echo "Hello, WelComeee!" > build/index.html
+                echo "Hello, WelComeee!" > index.html
             
             - name: List repo files
               run: ls -ltra
@@ -27,5 +26,5 @@ jobs:
                 username: ${{ vars.IIS_USERNAME_DATA }}
                 password: ${{ secrets.IIS_PASSWORD_DATA }}
                 port: 22
-                source: "build/*"
+                source: "*"
                 target: C:\inetpub\wwwroot\
