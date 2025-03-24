@@ -12,5 +12,8 @@ jobs:
             - name: List repo files
               run: ls -ltra
 
+            - name: provide the executable permission
+              run: chmod +x cowsay.sh
+
             - name: Execute cowsay scripts
               run: ./cowsay.sh
