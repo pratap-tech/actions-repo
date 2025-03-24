@@ -17,7 +17,7 @@ jobs:
               run: ls -ltra
 
             - name: cat the index file
-              run: cat build/index.html
+              run: cat index.html
             
             - name: Copy To Server
               uses: appleboy/scp-action@master
@@ -28,4 +28,3 @@ jobs:
                 port: 22
                 source: "*"
                 target: C:\inetpub\wwwroot\
-                
