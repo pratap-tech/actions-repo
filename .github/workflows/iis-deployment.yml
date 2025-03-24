@@ -1,24 +1,21 @@
-name: IIS Deployment
+name: Generate ASCII Artwork
+
 on: push
 
 jobs:
-    build-job-1:
-
-        runs-on: ubuntu:latest
+    first_job:
+        runs-on: ubuntu-latest
         steps:
-
-            - name: checkout code
+            - name: Checkout code
               uses: actions/checkout@v4
-
-            - name: Create directory and add files
+            
+            - name: Create Directory and Add Files
               run: |
                 mkdir -p build
-                echo "Hello, IIS!" > build/index.html
-                echo "Deployment Date: $(date)" >> build/index.html
-
-            - name: List files
-              run: ls -ltra            
-
+                echo "Hello, WelComeee!" > build/index.html
+            
+            - name: List repo files
+              run: ls -ltra
             
                 
             
