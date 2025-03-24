@@ -1,0 +1,20 @@
+name: IIS Deployment
+on: push
+
+jobs:
+    iis_deployment_jobs-1:
+        runs-on: ubuntu:latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: Create directory and add files
+              run: |
+                mkdir -p build
+                echo "Hello, IIS!" > build/index.html
+                echo "Deployment Date: $(date)" >> build/index.html
+
+            
+                
+            
+            
