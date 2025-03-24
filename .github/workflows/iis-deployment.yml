@@ -20,22 +20,6 @@ jobs:
             - name: cat the index file
               run: cat build/index.html
             
-            - name: Upload artifact
-              uses: actions/upload-artifact@v4
-              with:
-                name: my-artifact
-                path: build
-            
-
-    deploy_job-2:
-        needs: first_job-1
-        runs-on: ubuntu:latest
-        steps:
-            - name: Download artifact
-              uses: actions/download-artifact@v4
-              with:
-                name: my-artifact
-                
             - name: Copy To Server
               uses: appleboy/scp-action@master
               with:
@@ -43,7 +27,6 @@ jobs:
                 username: ${{ vars.IIS_USERNAME_DATA }}
                 password: ${{ secrets.IIS_PASSWORD_DATA }}
                 source: "build/*"
-                target: C:\inetpub\wwwroot\${{ github.run_id }}
-                
+                target: C:\inetpub\wwwroot\
             
             
