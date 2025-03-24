@@ -28,5 +28,3 @@ jobs:
                 password: ${{ secrets.IIS_PASSWORD_DATA }}
                 source: "build/*"
                 target: C:\inetpub\wwwroot\
-            
-            
