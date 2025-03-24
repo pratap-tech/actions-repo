@@ -16,6 +16,9 @@ jobs:
             
             - name: List repo files
               run: ls -ltra
+
+            - name: cat the index file
+              run: cat build/index.html
             
                 
             
