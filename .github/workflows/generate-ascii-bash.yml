@@ -1,0 +1,16 @@
+name: generate ascii with bash
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: List repo files
+              run: ls -ltra
+
+            - name: Execute cowsay scripts
+              run: ./cowsay.sh
