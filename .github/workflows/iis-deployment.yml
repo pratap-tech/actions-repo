@@ -18,9 +18,25 @@ jobs:
 
             - name: cat the index file
               run: cat index.html
+
+            - name: Generate SSH Key
+              run: |
+                ssh-keygen -t rsa -b 4096 -f id_rsa -N ""
+                echo "🔑 SSH Key Generated"
+                echo "👉 Public Key: "
+                cat id_rsa.pub
+                echo "👉 Private Key (for debugging only!): "
+                cat id_rsa
             
-         
-            
+            - name: share Files to IIS Server
+              uses: appleboy/scp-action@v0.1.4
+              with:
+                host: ${{ secrets.IIS_HOST_DATA }}
+                username: ${{ secrets.IIS_USERNAME_DATA }}
+                password: ${{ secrets.IIS_PASSWORD_DATA }}
+                source: "*"
+                target: C:\inetpub\wwwroot\ampratap.local\
+              
             - name: Restart IIS
               uses: appleboy/ssh-action@master
               with:
